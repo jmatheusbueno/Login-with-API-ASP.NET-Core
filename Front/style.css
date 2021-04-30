@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    background: url("img/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: 30% 45%;
+    width: 100vw;
+    height: 100vh;
+}
+
+form h1{
+    color: rgb(116, 116, 116);
+    text-transform: uppercase;
+}
+
+.box{
+    background-color: rgba(34, 34, 34, 0.95);
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.box input[type = "text"], input[type = "password"] {
+    background: none;
+    width: 200px;
+    display: block;
+    text-align: center;
+    outline: none;
+    margin: 20px auto;
+    border: 2px solid red;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 1px;
+    transition: 0.25s;
+}
+
+.box input[type = "text"]:focus, input[type = "password"]:focus {
+    width: 300px;
+    border-color: yellow;
+}
+
+.box input[type = "submit"], input[type = "button"] {
+    background: none;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    margin: 5px auto;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    color: rgb(116, 116, 116);
+    padding: 5px 20px;
+    transition: 0.25s;
+    font-weight: 600;
+}
+.box input[type = "submit"]:hover, input[type = "button"]:hover {
+    background-color: yellow;
+    color: red;
+}
+
+span {
+    color: yellow;
+}
