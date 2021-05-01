@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\Login With API ASP.NET Core.csproj": {}
+    "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\API\\Login With API ASP.NET Core.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\Login With API ASP.NET Core.csproj": {
+    "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\API\\Login With API ASP.NET Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\Login With API ASP.NET Core.csproj",
+        "projectUniqueName": "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\API\\Login With API ASP.NET Core.csproj",
         "projectName": "Login With API ASP.NET Core",
-        "projectPath": "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\Login With API ASP.NET Core.csproj",
+        "projectPath": "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\API\\Login With API ASP.NET Core.csproj",
         "packagesPath": "C:\\Users\\jmath\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\obj\\",
+        "outputPath": "D:\\Documentos\\Projetos\\Login With API ASP.NET Core\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jmath\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,6 +53,10 @@
               "noWarn": [
                 "NU1605"
               ]
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

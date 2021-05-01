@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Data.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace Login_With_API_ASP.NET_Core
 {
@@ -26,13 +28,13 @@ namespace Login_With_API_ASP.NET_Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContent>(opt => opt.UseInMemoryDatabase("LoginDataBase"));
-            services.AddScoped("LoginDataBase", "LoginDataBase");
+            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("LoginDataBase"));
+            services.AddScoped<DataContext, DataContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Login_With_API_ASP.NET_Core", Version = "v1" });
-            });
+            }); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Models.User
@@ -14,9 +13,8 @@ namespace Models.User
         public string Username { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
+        [DataType(DataType.Password, ErrorMessage = "O tipo dos dados não correnponde a uma senha")]
         [StringLength(15, MinimumLength = 5, ErrorMessage = "O campo deve conter entre 5 a 15 caractéres")]
-        [Display(Name = "Password")]
         public string Password { get; set; }
     }
 }
