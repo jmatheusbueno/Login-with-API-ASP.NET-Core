@@ -31,6 +31,7 @@ namespace Login_With_API_ASP.NET_Core
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("LoginDataBase"));
             services.AddScoped<DataContext, DataContext>();
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Login_With_API_ASP.NET_Core", Version = "v1" });
@@ -51,7 +52,9 @@ namespace Login_With_API_ASP.NET_Core
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

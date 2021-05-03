@@ -1,3 +1,5 @@
+console.log("Foi")
+
 function UserGet(url)
 {
     let request = new XMLHttpRequest();
@@ -5,3 +7,10 @@ function UserGet(url)
     request.send();
     return request.responseText
 }
+
+function Main()
+{
+    console.log(UserGet("https://localhost:44375/v1/users"))
+}
+
+Main()
