@@ -6,19 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login Personal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 </head>
 <body>
     <form action="login.html" class="box">
         <img src="img/cyberpunk.png" width="100px">
         <h1> <span>Cyber</span> Login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
-        <input type="button" name="" value="Create Account">
-        <input type="submit" name="" value="Login">
+        <input type="text" name="" placeholder="Username" id="username">
+        <input type="password" name="" placeholder="Password" id=password>
+        <input type="button" name="" value="Create Account" onclick="CreateAccount()">
+        <input type="button" name="" value="Login" id="login" onclick="Login()">
     </form>
-
-    <script src="main.js"> 
-
-    </script>
 </body>
 </html>
