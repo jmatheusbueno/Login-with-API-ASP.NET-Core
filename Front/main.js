@@ -12,7 +12,6 @@ function Connection()
 }
 
 function Login(){
-    console.log("Login() ok")
     let url = Connection()
     let username = document.getElementById('username').value
     let password = document.getElementById('password').value 
@@ -22,7 +21,6 @@ function Login(){
         "Password" : password
     }
 
-    console.log("Verificando Login")
     let request = new XMLHttpRequest()
     request.open("POST", url + "/login", true)
     request.setRequestHeader("Content-Type", "application/json")
@@ -30,9 +28,13 @@ function Login(){
 
     request.onload = function() {
         console.log(this.responseText)
+        if(request.responseText == "Esta conta não está cadastrada")
+            window.alert("Esta conta não está cadastrada")       
+        else
+            window.alert("Login efetuado com sucesso")        
     }
-
-    return request.responseText
+    
+    return console.log(this.responseText)
 }
 
 function Get(url)

@@ -43,6 +43,5 @@ namespace Controllers
             else
                 return BadRequest("Esta conta não está cadastrada");
         }
-
     }
 }
