@@ -23,7 +23,7 @@ namespace Controllers
         [Route("")]
         public async Task<ActionResult<User>> Post([FromServices] DataContext context, [FromBody] User user)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 context.User.Add(user);
                 await context.SaveChangesAsync();
@@ -31,6 +31,17 @@ namespace Controllers
             }
             else
                 return BadRequest(ModelState);
+        }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<User>> Login([FromServices] DataContext context, [FromBody] User user)
+        {
+            var users = await context.User.AsNoTracking().ToListAsync();
+            var registeredUser = users.Find(u => u.Username == user.Username && u.Password == user.Password);
+            if (registeredUser?.Username == user.Username)
+                return registeredUser;
+            else
+                return BadRequest("Esta conta não está cadastrada");
         }
 
     }

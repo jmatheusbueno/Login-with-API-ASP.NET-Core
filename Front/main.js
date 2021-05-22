@@ -4,7 +4,7 @@ console.log("main.js Ok")
 
 function Connection()
 {   
-    //Visual Studio URL
+    //Visual Studio URL with Swagger
     return "https://localhost:44375/v1/users"
     
     //Visual Studio Code URL
@@ -17,6 +17,22 @@ function Login(){
     let username = document.getElementById('username').value
     let password = document.getElementById('password').value 
 
+    body = {
+        "Username" : username,
+        "Password" : password
+    }
+
+    console.log("Verificando Login")
+    let request = new XMLHttpRequest()
+    request.open("POST", url + "/login", true)
+    request.setRequestHeader("Content-Type", "application/json")
+    request.send(JSON.stringify(body))
+
+    request.onload = function() {
+        console.log(this.responseText)
+    }
+
+    return request.responseText
 }
 
 function Get(url)
